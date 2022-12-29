@@ -5,5 +5,5 @@ bases:
 - ../../base
 
 images:                       
-- name: gitopsbook/sample-app
-  newTag: v0.2
+- name: medeiser/node-hello-world
+  newTag: '2'

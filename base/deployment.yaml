@@ -1,22 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-app
+  name: node-hello-world
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: sample-app
+      app: node-hello-world
   template:
     metadata:
       labels:
-        app: sample-app
+        app: node-hello-world
     spec:
       containers:
-      - command:
-        - /app/sample-app
-        image: gitopsbook/sample-app:REPLACEME   
-        name: sample-app
-        ports:
-        - containerPort: 8080
+        - name: node-hello-world
+          image: medeiser/node-hello-world:REPLACEME
+          ports:
+            - containerPort: 8080

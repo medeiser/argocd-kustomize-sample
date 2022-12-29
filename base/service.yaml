@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: node-hello-world-service
+spec:
+  selector:
+    app: node-hello-world
+  ports:
+    - port: 8080
