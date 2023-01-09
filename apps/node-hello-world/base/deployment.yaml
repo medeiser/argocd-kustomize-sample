@@ -18,5 +18,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: ENV_NODE
-              value: REPLACEME
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: node-hello-world-env
+                  key: NODE_ENV
