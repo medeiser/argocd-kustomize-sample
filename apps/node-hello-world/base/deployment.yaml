@@ -24,14 +24,13 @@ spec:
                   name: node-hello-world-env
                   key: NODE_ENV
           volumeMounts:
-            - name: default-config-volume
-              mountPath: /usr/src/app/config
             - name: config-volume
               mountPath: /usr/src/app/config
       volumes:
         - name: config-volume
-          configMap:
-            name: node-hello-world-config
-        - name: default-config-volume
-          configMap:
-            name: default-config
+          projected:
+            sources:
+              - configMap:
+                  name: node-hello-world-config
+              - configMap:
+                  name: default-config
