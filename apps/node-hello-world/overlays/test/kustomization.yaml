@@ -6,7 +6,7 @@ bases:
 
 images:                       
 - name: medeiser/node-hello-world
-  newTag: '3'
+  newTag: '4'
 
 configMapGenerator:
   - name: node-hello-world-env
