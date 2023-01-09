@@ -13,5 +13,6 @@ configMapGenerator:
     literals:
       - NODE_ENV="test"
   - name: node-hello-world-config
+    behavior: merge
     files:
       - config/test.yaml
