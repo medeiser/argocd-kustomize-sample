@@ -6,4 +6,9 @@ bases:
 
 images:                       
 - name: medeiser/node-hello-world
-  newTag: '2'
+  newTag: '3'
+
+configMapGenerator:
+  - name: node-hello-world-config-test
+    files:
+      - ../../config/test.yaml

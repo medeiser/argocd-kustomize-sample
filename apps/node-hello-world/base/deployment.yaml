@@ -17,3 +17,6 @@ spec:
           image: medeiser/node-hello-world:REPLACEME
           ports:
             - containerPort: 8080
+          env:
+            - name: ENV_NODE
+              value: REPLACEME
