@@ -7,3 +7,11 @@ bases:
 images:
 - name: medeiser/node-hello-world
   newTag: '4'
+
+configMapGenerator:
+  - name: node-hello-world-env
+    literals:
+      - NODE_ENV="dev"
+  - name: node-hello-world-config
+    files:
+      - config/dev.yaml
