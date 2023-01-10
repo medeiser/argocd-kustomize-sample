@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: node-hello-world-test
+  name: node-hello-world-dev
   namespace: argocd
 spec:
   project: default
   source:
-    path: apps/node-hello-world/overlays/test
+    path: apps/node-hello-world/overlays/dev
     repoURL: https://github.com/medeiser/argocd-kustomize-sample
   destination:
-    namespace: test
+    namespace: dev
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
