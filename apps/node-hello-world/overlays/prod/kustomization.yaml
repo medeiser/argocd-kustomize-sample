@@ -6,4 +6,4 @@ bases:
 
 images:
 - name: medeiser/node-hello-world
-  newTag: '1'
+  newTag: '4'
