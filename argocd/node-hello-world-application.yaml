@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-hello-world-test
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: apps/node-hello-world/overlays/test
+    repoURL: https://github.com/medeiser/argocd-kustomize-sample
+  destination:
+    namespace: test
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      
