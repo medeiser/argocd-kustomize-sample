@@ -27,14 +27,17 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /usr/src/app/config
-              subPathExpr: $(NODE_ENV).yaml
-            # - name: common-config-volume
-            #   mountPath: /usr/src/app/config
-            #   subPathExpr: $common-$(NODE_ENV).yaml
       volumes:
+        # - name: config-volume
+        #   configMap:
+        #     name: node-hello-world-config
+        # - name: common-config-volume
+        #   configMap:
+        #     name: common-config
         - name: config-volume
-          configMap:
-            name: node-hello-world-config
-        - name: common-config-volume
-          configMap:
-            name: common-config
+          projected:
+            sources:
+              - configMap:
+                  name: node-hello-world-config
+              - configMap:
+                  name: common-config
