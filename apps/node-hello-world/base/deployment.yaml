@@ -24,10 +24,10 @@ spec:
                   name: node-hello-world-env
                   key: NODE_ENV
           volumeMounts:
-            # - name: config-volume
-            #   mountPath: /usr/src/app/config
-            - name: common-config-volume
+            - name: config-volume
               mountPath: /usr/src/app/config
+            - name: common-config-volume
+              mountPath: /usr/src/app/config2
       volumes:
         - name: config-volume
           configMap:
