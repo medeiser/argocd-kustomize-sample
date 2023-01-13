@@ -1,8 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
+resources:
 - ../../base
+- ../../../config/overlays/dev
 
 images:
 - name: medeiser/node-hello-world
@@ -15,3 +16,4 @@ configMapGenerator:
   - name: node-hello-world-config
     files:
       - config/dev.yaml
+      

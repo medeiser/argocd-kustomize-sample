@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
 - ../../base
 
-images:
-- name: medeiser/node-hello-world
-  newTag: '4'
+configMapGenerator:
+  - name: common-config-dev
+    files:
+      - common-dev.yaml
+      
