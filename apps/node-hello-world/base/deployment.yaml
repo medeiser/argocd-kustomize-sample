@@ -26,8 +26,8 @@ spec:
                   key: NODE_ENV
           volumeMounts:
             - name: config-volume
-              mountPath: /usr/src/app/config/$(NODE_ENV).yaml
-              subPath: $(NODE_ENV).yaml
+              mountPath: /usr/src/app/config
+              subPathExpr: $(NODE_ENV).yaml
             # - name: common-config-volume
             #   mountPath: /usr/src/app/config
             #   subPathExpr: $common-$(NODE_ENV).yaml
