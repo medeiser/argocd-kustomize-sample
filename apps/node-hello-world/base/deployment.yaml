@@ -27,8 +27,10 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /usr/src/app/config
+              subPathExpr: $(NODE_ENV).yaml
             - name: common-config-volume
-              mountPath: /usr/src/app/config2
+              mountPath: /usr/src/app/config
+              subPathExpr: $common-$(NODE_ENV).yaml
       volumes:
         - name: config-volume
           configMap:
