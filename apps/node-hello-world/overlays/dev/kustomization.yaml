@@ -13,7 +13,7 @@ configMapGenerator:
   - name: node-hello-world-env
     literals:
       - NODE_ENV="dev"
-  # - name: node-hello-world-config
-  #   files:
-  #     - config/dev.yaml
+  - name: node-hello-world-config
+    files:
+      - config/dev.yaml
       

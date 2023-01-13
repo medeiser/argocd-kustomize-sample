@@ -5,7 +5,7 @@ resources:
 - ../../base
 
 configMapGenerator:
-  - name: common-config-dev
+  - name: common-config
     files:
       - common-dev.yaml
       
